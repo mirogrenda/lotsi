@@ -106,7 +106,7 @@ export default {
     },
     calcByAmount () {
       this.setAmount(this.getAmount())
-      this.calcSl()
+      this.calcTotalPriceAndSl()
     },
     calcByTotalPrice () {
       this.setTotalPrice(this.getTotalPrice())
@@ -131,6 +131,10 @@ export default {
         this.setAmount(this.getTotalPrice() / this.getPrice())
         this.calcSl()
       }
+    },
+    calcTotalPriceAndSl () {
+      this.setTotalPrice(this.getPrice() * this.getAmount())
+      this.calcSl()
     }
   }
 }
